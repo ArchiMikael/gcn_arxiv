@@ -159,7 +159,7 @@ def evaluate_dgl(model, graph, labels, masks, evaluator):
 
 
 ########TRAINING########
-n_epochs = 1
+n_epochs = 1000
 
 total_time_dgl = 0
 total_time_spektral = 0
