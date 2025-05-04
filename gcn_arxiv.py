@@ -1,3 +1,11 @@
+##########VARS##########
+EPS = 1e-5
+MOMENTUM = 0.99
+SEED = 0
+##########VARS##########
+
+
+#########MODELS#########
 import tensorflow as tf
 from tensorflow import keras
 from keras import saving
@@ -146,3 +154,4 @@ class GCN_dgl(torch.nn.Module):
     h = self.GCNConv_3(graph, h, edge_weight=graph.edata["feat"])
 
     return h
+#########MODELS#########

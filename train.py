@@ -1,10 +1,3 @@
-##########VARS##########
-EPS = 1e-5
-MOMENTUM = 0.99
-SEED = 0
-##########VARS##########
-
-
 #########GRAPHS#########
 import torch
 from ogb.nodeproppred import DglNodePropPredDataset, Evaluator
