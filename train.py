@@ -229,3 +229,9 @@ for epoch in range(1, n_epochs + 1):
       "----------------------------\n"
     )
 ########TRAINING########
+
+
+#########SAVING#########
+model_spektral.save('./model_spektral.keras')
+torch.save(model_dgl, './model_dgl.pt')
+#########SAVING#########
