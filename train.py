@@ -190,16 +190,16 @@ for epoch in range(1, n_epochs + 1):
   toc_spektral = time.time()
   total_time_spektral += toc_spektral - tic_spektral
 
-  model_dgl.eval()
-  pred_dgl = model_dgl(graph_dgl, graph_dgl.ndata["feat"]).detach().numpy()
-  pred_spektral = model_spektral([tf.convert_to_tensor(graph_spektral.x), graph_spektral.a], training=False).numpy()
-  discr = pred_spektral - pred_dgl
-  discr_dgl = max([abs(item) for item in (discr).ravel()])/max([abs(item) for item in (pred_dgl).ravel()])
-  discr_spektral = max([abs(item) for item in (discr).ravel()])/max([abs(item) for item in (pred_spektral).ravel()])
-  print("-------------------------" + str(epoch) + "-------------------------")
-  print("Discrepancy (max in DGL): " + str(100.0*discr_dgl) + "%")
-  print("Discrepancy (max in Spektral): " + str(100.0*discr_spektral) + "%")
-  print("-------------------------" + str(epoch) + "-------------------------")
+  #model_dgl.eval()
+  #pred_dgl = model_dgl(graph_dgl, graph_dgl.ndata["feat"]).detach().numpy()
+  #pred_spektral = model_spektral([tf.convert_to_tensor(graph_spektral.x), graph_spektral.a], training=False).numpy()
+  #discr = pred_spektral - pred_dgl
+  #discr_dgl = max([abs(item) for item in (discr).ravel()])/max([abs(item) for item in (pred_dgl).ravel()])
+  #discr_spektral = max([abs(item) for item in (discr).ravel()])/max([abs(item) for item in (pred_spektral).ravel()])
+  #print("-------------------------" + str(epoch) + "-------------------------")
+  #print("Discrepancy (max in DGL): " + str(100.0*discr_dgl) + "%")
+  #print("Discrepancy (max in Spektral): " + str(100.0*discr_spektral) + "%")
+  #print("-------------------------" + str(epoch) + "-------------------------")
 
   if va_loss_dgl < best_va_loss_dgl:
     best_va_loss_dgl = va_loss_dgl
