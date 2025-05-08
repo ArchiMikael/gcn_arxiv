@@ -116,12 +116,12 @@ tic = time.time()
 tr_acc_dgl, va_acc_dgl, te_acc_dgl, tr_loss_dgl, va_loss_dgl, te_loss_dgl = evaluate_dgl(model_dgl, graph_dgl, labels_dgl, [tr_idx, va_idx, te_idx], evaluator)
 toc = time.time()
 eval_time = toc - tic
-print(f"Done in {eval_time:.2f}! - Test acc: {te_acc_dgl:.8f}")
+print(f"Done in {eval_time:.2f}! - Train acc: {tr_acc_dgl:.8f}, Validation acc: {va_acc_dgl:.8f}, Test acc: {te_acc_dgl:.8f}")
 
 print("Evaluating model.")
 tic = time.time()
 tr_acc_spektral, va_acc_spektral, te_acc_spektral, tr_loss_spektral, va_loss_spektral, te_loss_spektral = evaluate_spektral(model_spektral, graph_spektral, graph_spektral.y, masks, evaluator)
 toc = time.time()
 eval_time = toc - tic
-print(f"Done in {eval_time:.2f}! - Test acc: {te_acc_spektral:.8f}")
+print(f"Done in {eval_time:.2f}! - Train acc: {tr_acc_spektral:.8f}, Validation acc: {va_acc_spektral:.8f}, Test acc: {te_acc_spektral:.8f}")
 ##########EVAL##########
