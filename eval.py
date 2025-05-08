@@ -5,6 +5,7 @@ from spektral.data import Graph
 from dgl import from_scipy
 import numpy as np
 from gcn_arxiv import *
+import time
 
 dataset = DglNodePropPredDataset(name="ogbn-arxiv")
 out = dataset.num_classes
